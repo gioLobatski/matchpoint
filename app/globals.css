@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-500: #e2a037;
+  --color-primary-600: #9e6813;
+  --color-primary-700: #7c4f07;
+  --color-primary-800: #5a3700;
+  --color-primary-900: #5a3700;
+  --color-amber-accent: #f59e0b;
+  --color-card: #181008;
+  --color-panel: #24190c;
+  --color-section: #100c08;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}

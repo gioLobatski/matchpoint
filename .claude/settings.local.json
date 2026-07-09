@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__92159233-e668-4706-b8dd-37465197e7d9__get_design_context",
+      "Bash(npx -y create-next-app@latest . --ts --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(curl -sSL -o public/images/hero-bg.png -w \"%{http_code} %{size_download}\\\\n\" \"https://www.figma.com/api/mcp/asset/fc44807e-3ac1-4587-ad08-9d4f5c639b95\")",
+      "Bash(echo \"EXIT $?\")",
+      "Bash(npm run *)"
+    ]
+  }
+}
