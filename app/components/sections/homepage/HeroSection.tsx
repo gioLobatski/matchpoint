@@ -1,11 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import Section from "@/app/components/layout/Section";
 
-export default function Hero() {
+export default function HeroSection() {
   return (
-    <section id="home" className="relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden px-6 pt-[98px] lg:px-20">
+    <Section
+      id="home"
+      className="relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden px-6 pt-[98px]"
+    >
       <div className="absolute inset-0">
-        <Image src="/images/hero-bg.png" alt="" fill priority className="object-cover" />
+        <Image
+          src="/images/hero-bg.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/30" />
       </div>
       <div className="relative flex flex-col items-center gap-10 text-center">
@@ -13,10 +23,12 @@ export default function Hero() {
           Built for Officials Who Make Every Game Count
         </p>
         <div className="flex max-w-[1000px] flex-col items-center gap-4">
-          <h1 className="text-4xl font-bold text-white md:text-6xl">Every Call Counts</h1>
-          <p className="max-w-[954px] text-xl leading-9 text-neutral-200 md:text-2xl">
-            The platform built for Philippine basketball officials — get discovered, get booked,
-            and get paid on time.
+          <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">
+            Every Call Counts
+          </h1>
+          <p className="max-w-[954px] text-xl leading-9 text-white/80 md:text-2xl">
+            The platform built for Philippine basketball officials — get
+            discovered, get booked, and get paid on time.
           </p>
         </div>
         <Link
@@ -26,6 +38,6 @@ export default function Hero() {
           Start My MatchPoint Journey
         </Link>
       </div>
-    </section>
+    </Section>
   );
 }

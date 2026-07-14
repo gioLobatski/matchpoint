@@ -1,28 +1,28 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import PainPoints from "@/components/PainPoints";
-import MissionBanner from "@/components/MissionBanner";
-import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
-import WhyWeBuilt from "@/components/WhyWeBuilt";
-import SocialProof from "@/components/SocialProof";
-import ApplyForm from "@/components/ApplyForm";
-import Footer from "@/components/Footer";
+import Header from "@/app/components/layout/Header";
+import Footer from "@/app/components/layout/Footer";
+import HeroSection from "@/app/components/sections/homepage/HeroSection";
+import MarqueeSection from "@/app/components/sections/homepage/MarqueeSection";
+import PainPointsSection from "@/app/components/sections/homepage/PainPointsSection";
+import MissionBannerSection from "@/app/components/sections/homepage/MissionBannerSection";
+import FeaturesSection from "@/app/components/sections/homepage/FeaturesSection";
+import HowItWorksSection from "@/app/components/sections/homepage/HowItWorksSection";
+import WhyWeBuiltSection from "@/app/components/sections/homepage/WhyWeBuiltSection";
+import SocialProofSection from "@/app/components/sections/homepage/SocialProofSection";
+import ApplyFormSection from "@/app/components/sections/homepage/ApplyFormSection";
 
 export default function Home() {
   return (
     <main className="bg-black">
-      <Navbar />
-      <Hero />
-      <Marquee />
-      <PainPoints />
-      <MissionBanner />
-      <Features />
-      <HowItWorks />
-      <WhyWeBuilt />
-      <SocialProof />
-      <ApplyForm />
+      <Header />
+      <HeroSection />
+      <MarqueeSection />
+      <PainPointsSection />
+      <MissionBannerSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <WhyWeBuiltSection />
+      <SocialProofSection />
+      <ApplyFormSection />
       <Footer />
     </main>
   );

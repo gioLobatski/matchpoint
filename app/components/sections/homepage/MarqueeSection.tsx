@@ -1,8 +1,11 @@
-const items = Array.from({ length: 8 });
+import Section from "@/app/components/layout/Section";
+import { MARQUEE_ITEM_COUNT } from "@/app/lib/constants";
 
-export default function Marquee() {
+export default function MarqueeSection() {
+  const items = Array.from({ length: MARQUEE_ITEM_COUNT });
+
   return (
-    <div className="w-full overflow-hidden bg-primary-500 py-6">
+    <Section bgColor="bg-primary-500" className="overflow-hidden py-6">
       <div className="animate-marquee flex w-max items-center gap-12">
         {items.map((_, i) => (
           <span
@@ -13,6 +16,6 @@ export default function Marquee() {
           </span>
         ))}
       </div>
-    </div>
+    </Section>
   );
 }
