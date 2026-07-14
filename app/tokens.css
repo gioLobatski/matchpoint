@@ -1,0 +1,186 @@
+:root {
+  /* ===================== COLORS ===================== */
+  /* Primary Colors (Gold / Amber) */
+  --color-primary: #e2a037;
+  --color-primary-hover: #c98a2a;
+  --color-primary-active: #b07620;
+  --color-primary-dark: #9e6813;
+  --color-primary-darker: #7c4f07;
+  --color-primary-darkest: #5a3700;
+
+  /* Accent Colors */
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d98b09;
+
+  /* Neutral Scale */
+  --color-white: #ffffff;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-black: #000000;
+
+  /* Semantic Colors */
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-text-inverse: var(--color-black);
+
+  --color-bg-primary: var(--color-black);
+  --color-bg-section: #100c08;
+  --color-bg-card: #181008;
+  --color-bg-panel: #24190c;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-accent: var(--color-primary);
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* ===================== TYPOGRAPHY ===================== */
+  --font-family-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Font Sizes — Figma Tokens */
+  --font-size-text-sm: 14px;
+  --font-size-text-base: 16px;
+  --font-size-text-lg: 18px;
+  --font-size-text-xl: 20px;
+  --font-size-text-2xl: 24px;
+  --font-size-text-3xl: 30px;
+  --font-size-text-4xl: 36px;
+  --font-size-text-5xl: 48px;
+  --font-size-text-6xl: 60px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 1.75;
+
+  /* Responsive Typography Tokens (Desktop defaults) */
+  --font-size-h1: 60px;
+  --line-height-h1: 72px;
+
+  --font-size-h2: 36px;
+  --line-height-h2: 44px;
+
+  --font-size-h3: 24px;
+  --line-height-h3: 32px;
+
+  --font-size-body: 16px;
+  --line-height-body: 28px;
+
+  --font-size-button: 16px;
+  --line-height-button: 28px;
+
+  --font-size-label: 14px;
+  --line-height-label: 24px;
+
+  /* ===================== SPACING ===================== */
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+
+  /* Section vertical padding */
+  --section-py: 80px;
+  --section-py-lg: 96px;
+
+  /* ===================== LAYOUT ===================== */
+  --max-width-container: 1340px;
+  --max-width-narrow: 960px;
+  --max-width-text: 710px;
+  --header-height: 98px;
+
+  /* ===================== BORDER RADIUS ===================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ===================== SHADOWS ===================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+  /* ===================== TRANSITIONS ===================== */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-slower: 500ms ease;
+  --transition-entrance: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ===================== Z-INDEX ===================== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* ===================== OVERLAYS ===================== */
+  --overlay-light: rgba(0, 0, 0, 0.3);
+  --overlay-heavy: rgba(0, 0, 0, 0.8);
+}
+
+/* Tablet (768px - 1023px): scale headings down ~25% */
+@media (max-width: 1023px) {
+  :root {
+    --font-size-h1: 48px;
+    --line-height-h1: 58px;
+
+    --font-size-h2: 28px;
+    --line-height-h2: 36px;
+
+    --font-size-h3: 22px;
+    --line-height-h3: 28px;
+  }
+}
+
+/* Mobile (<768px): scale headings down further */
+@media (max-width: 767px) {
+  :root {
+    --font-size-h1: 36px;
+    --line-height-h1: 44px;
+
+    --font-size-h2: 24px;
+    --line-height-h2: 32px;
+
+    --font-size-h3: 20px;
+    --line-height-h3: 26px;
+
+    --font-size-body: 15px;
+    --line-height-body: 26px;
+
+    --font-size-button: 15px;
+    --line-height-button: 26px;
+
+    --font-size-label: 12px;
+    --line-height-label: 20px;
+
+    --section-py: 64px;
+  }
+}
