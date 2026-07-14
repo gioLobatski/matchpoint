@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 import { PAIN_POINTS } from "@/app/lib/constants";
 
 export default function PainPointsSection() {
   return (
     <Section id="problem" bgColor="bg-black" className="py-20">
+      <FadeIn direction="up">
       <Row className="flex flex-col overflow-hidden rounded-2xl lg:flex-row">
         <div className="relative min-h-[320px] lg:min-h-[690px] lg:w-[48%]">
           <Image
@@ -34,6 +38,7 @@ export default function PainPointsSection() {
           </div>
         </div>
       </Row>
+      </FadeIn>
     </Section>
   );
 }

@@ -192,6 +192,55 @@ This ensures consistent max-width, centering, and horizontal padding across all 
 
 ---
 
+### 2.18 — FadeIn `className` Applied to Inner Div Only
+
+**Before:** FadeIn applied `className` to **both** the outer and inner divs. When sections passed layout classes like `flex flex-col gap-10`, those classes doubled on two nested elements, causing cascading layout conflicts across every section.
+
+**Fix:** `className` now goes to the **inner div only**. The outer div stays minimal (`transition-all` only, for opacity animation):
+```tsx
+// Outer: opacity transition only
+<div ref={ref} className="transition-all" style={{ opacity, ... }}>
+  // Inner: layout classes + translate animation
+  <div className={`${className} ${isVisible ? "" : getInitialTransform()}`}>
+    {children}
+  </div>
+</div>
+```
+
+This ensures flex/layout classes apply exactly once to the content wrapper.
+
+---
+
+### 2.19 — Scroll Animations Re-added to All Sections
+
+**Before:** After a git reset to the main branch, all section components lost their `<FadeIn>` wrappers and `"use client"` directives — content appeared instantly with no entrance animation.
+
+**Fix:** Re-added FadeIn + `"use client"` to all 8 section components:
+
+| Section | FadeIn Config |
+|---|---|
+| HeroSection | `direction="up" duration={800}` |
+| PainPointsSection | `direction="up"` |
+| MissionBannerSection | `direction="up" duration={800}` |
+| FeaturesSection | `direction="up"` |
+| HowItWorksSection | Two staggered: heading + card `delay={200}` |
+| WhyWeBuiltSection | `direction="up"` on text Row only |
+| SocialProofSection | `direction="up"` |
+| ApplyFormSection | `direction="up"` |
+
+---
+
+### 2.20 — WhyWeBuiltSection Equal 50/50 Columns
+
+**Before:** Image column used a fixed `lg:w-[476px] lg:shrink-0` while the text side used `flex-1`, giving the text all remaining space and squeezing the image to less than half.
+
+**Fix:**
+- Image column: `lg:w-[476px] lg:shrink-0` → `lg:flex-1` (equal 50/50 split)
+- Image: `object-cover` → `object-contain` (prevents portrait cropping)
+- FadeIn wrapping the Row: added `className="flex flex-1"` so the FadeIn wrapper divs participate in the flex layout instead of breaking it with block display
+
+---
+
 ## Items Not Changed (Skipped by Request)
 
 - **1.3** SEO infrastructure (robots.ts, sitemap.ts, OG, JSON-LD)

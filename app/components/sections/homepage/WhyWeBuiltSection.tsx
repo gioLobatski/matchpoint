@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 
 export default function WhyWeBuiltSection() {
   return (
@@ -9,14 +12,15 @@ export default function WhyWeBuiltSection() {
       bgColor="bg-section"
       className="flex flex-col items-stretch lg:flex-row"
     >
-      <div className="relative min-h-[400px] bg-card lg:min-h-[623px] lg:w-[476px] lg:shrink-0">
+      <div className="relative min-h-[400px] bg-card lg:min-h-[623px] lg:flex-1">
         <Image
           src="/images/founder.png"
           alt="Rhoy Landicho, Founder of MatchPoint"
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
+      <FadeIn direction="up" className="flex flex-1">
       <Row className="flex flex-1 items-center justify-center p-10 lg:p-20">
         <div className="flex max-w-[621px] flex-col items-center gap-12 text-center">
           <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
@@ -45,6 +49,7 @@ export default function WhyWeBuiltSection() {
           </div>
         </div>
       </Row>
+      </FadeIn>
     </Section>
   );
 }

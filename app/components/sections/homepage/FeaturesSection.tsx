@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 import { FEATURES } from "@/app/lib/constants";
 
 export default function FeaturesSection() {
   return (
     <Section id="solutions" bgColor="bg-black" className="py-20">
+      <FadeIn direction="up">
       <Row className="flex flex-col-reverse overflow-hidden rounded-2xl lg:flex-row">
         <div className="bg-panel p-10 lg:w-[52%]">
           <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
@@ -34,6 +38,7 @@ export default function FeaturesSection() {
           />
         </div>
       </Row>
+      </FadeIn>
     </Section>
   );
 }

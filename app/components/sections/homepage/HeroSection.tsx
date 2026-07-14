@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Section from "@/app/components/layout/Section";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 
 export default function HeroSection() {
   return (
@@ -18,7 +21,7 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>
-      <div className="relative flex flex-col items-center gap-10 text-center">
+      <FadeIn direction="up" duration={800} className="relative flex flex-col items-center gap-10 text-center">
         <p className="text-base uppercase tracking-[3.2px] text-amber-accent">
           Built for Officials Who Make Every Game Count
         </p>
@@ -37,7 +40,7 @@ export default function HeroSection() {
         >
           Start My MatchPoint Journey
         </Link>
-      </div>
+      </FadeIn>
     </Section>
   );
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 
 const inputClass =
   "w-full rounded-xl border border-neutral-700 bg-neutral-900 p-6 text-base leading-6 text-white placeholder:text-neutral-400/60 focus:border-primary-500 focus:outline-none appearance-none";
@@ -22,6 +23,7 @@ export default function ApplyFormSection() {
         />
         <div className="absolute inset-0 bg-black/80" />
       </div>
+      <FadeIn direction="up">
       <Row className="relative grid items-start gap-12 lg:grid-cols-2">
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
@@ -125,6 +127,7 @@ export default function ApplyFormSection() {
           />
         </div>
       </Row>
+      </FadeIn>
     </Section>
   );
 }

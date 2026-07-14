@@ -173,6 +173,68 @@ This includes: navigation items, feature cards, testimonials, stats, step lists,
 
 ---
 
+## 11. Design Tokens File
+
+- Every project MUST have `app/tokens.css` with CSS custom properties for: colors, typography (with responsive breakpoints), spacing, border-radius, shadows, transitions, z-index, and overlays
+- `app/globals.css` imports tokens via `@import "./tokens.css"` — only ONE `@import "tailwindcss"` and ONE tokens import allowed
+- NEVER duplicate the `@import "tailwindcss"` line — it wipes all generated Tailwind styles
+- Use token variables in components (e.g., `var(--color-primary)`, `var(--transition-entrance)`)
+
+---
+
+## 12. Scroll Animations — Mandatory FadeIn Usage
+
+- Every section component (except Marquee) MUST wrap its content in `<FadeIn>`
+- FadeIn is in `app/components/ui/FadeIn.tsx`, backed by `app/hooks/useOnScreen.ts`
+- Components using FadeIn MUST have `"use client"` directive
+
+**FadeIn architecture (critical):**
+```tsx
+// Outer div: opacity transition ONLY — className="transition-all"
+// Inner div: layout classes + translate animation — receives `className` prop
+<div ref={ref} className="transition-all" style={{ opacity, transitionDuration, ... }}>
+  <div className={`${className} ${isVisible ? "" : getInitialTransform()}`}>
+    {children}
+  </div>
+</div>
+```
+
+- `className` goes to the **inner div only** — NEVER to the outer div (prevents double-class layout bugs)
+- The outer div handles opacity fading; the inner div handles layout + slide animation
+
+**Animation rules:**
+- Default direction: `"up"` (content slides up as it fades in)
+- Default duration: `600ms`
+- Hero sections use `duration={800}` for a slower, more dramatic entrance
+- Use `delay` prop for staggered animations within a section (e.g., heading first, content second with `delay={200}`)
+- When wrapping a `Row` inside a flex Section, pass `className="flex flex-1"` to FadeIn so the wrapper divs don't break the flex flow
+
+---
+
+## 13. WhyWeBuiltSection Flex Layout Pattern
+
+Side-by-side sections (image + content) use a flex Section with equal columns:
+
+```tsx
+<Section className="flex flex-col items-stretch lg:flex-row">
+  <div className="relative min-h-[400px] bg-card lg:flex-1">
+    {/* image column — 50% */}
+  </div>
+  <FadeIn direction="up" className="flex flex-1">
+  <Row className="flex flex-1 items-center justify-center p-10">
+    {/* content column — 50%, centered */}
+  </Row>
+  </FadeIn>
+</Section>
+```
+
+**Rules:**
+- Image column uses `lg:flex-1` (NOT a fixed width like `lg:w-[476px]`) for equal 50/50 split
+- FadeIn wrapping the Row MUST have `className="flex flex-1"` to preserve the flex flow
+- Image uses `object-contain` to prevent the portrait from being cropped in height
+
+---
+
 ## Quick Reference Checklist
 
 Before submitting any component, verify:
@@ -187,3 +249,8 @@ Before submitting any component, verify:
 - [ ] Icons are unique and semantically correct per feature
 - [ ] File is in the correct subdirectory
 - [ ] Filename follows PascalCase + Section suffix convention
+- [ ] `tokens.css` exists and is imported in `globals.css` (single import only)
+- [ ] Section includes `<FadeIn>` scroll animation (except Marquee)
+- [ ] Component has `"use client"` if using FadeIn/hooks
+- [ ] FadeIn `className` applied to inner div only (never outer)
+- [ ] Side-by-side sections use `lg:flex-1` on both columns for equal split

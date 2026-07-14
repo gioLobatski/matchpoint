@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 import { HOW_IT_WORKS_STEPS } from "@/app/lib/constants";
 
 export default function HowItWorksSection() {
@@ -10,6 +13,7 @@ export default function HowItWorksSection() {
       bgColor="bg-section"
       className="flex flex-col items-center gap-16 py-24"
     >
+      <FadeIn direction="up">
       <Row maxWidth={960} className="flex flex-col gap-4 text-center">
         <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
           How MatchPoint Works for Officials
@@ -18,6 +22,8 @@ export default function HowItWorksSection() {
           Your step-by-step journey to a better officiating career.
         </p>
       </Row>
+      </FadeIn>
+      <FadeIn direction="up" delay={200}>
       <Row className="flex flex-col overflow-hidden rounded-2xl bg-card lg:flex-row">
         <div className="flex flex-1 flex-col justify-center p-10 lg:p-16">
           <div className="flex flex-col gap-6">
@@ -61,6 +67,7 @@ export default function HowItWorksSection() {
           />
         </div>
       </Row>
+      </FadeIn>
       <Row className="h-px bg-primary-500 opacity-35" />
     </Section>
   );

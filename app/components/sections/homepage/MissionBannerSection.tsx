@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 
 export default function MissionBannerSection() {
   return (
@@ -15,7 +18,7 @@ export default function MissionBannerSection() {
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>
-      <div className="relative flex flex-col items-center gap-10 text-center">
+      <FadeIn direction="up" duration={800} className="relative flex flex-col items-center gap-10 text-center">
         <p className="text-base uppercase tracking-[3.2px] text-amber-accent">
           Built for Officials
         </p>
@@ -29,7 +32,7 @@ export default function MissionBannerSection() {
             standard.
           </p>
         </div>
-      </div>
+      </FadeIn>
     </Section>
   );
 }

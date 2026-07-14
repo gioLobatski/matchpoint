@@ -41,7 +41,7 @@ export function FadeIn({
   return (
     <div
       ref={ref}
-      className={`transition-all ${className}`}
+      className="transition-all"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translate(0, 0)" : undefined,
@@ -50,7 +50,7 @@ export function FadeIn({
         transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       }}
     >
-      <div className={isVisible ? "" : getInitialTransform()}>
+      <div className={`${className} ${isVisible ? "" : getInitialTransform()}`}>
         {children}
       </div>
     </div>

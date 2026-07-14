@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
+import { FadeIn } from "@/app/components/ui/FadeIn";
 import { TESTIMONIAL_STATS } from "@/app/lib/constants";
 
 export default function SocialProofSection() {
@@ -15,6 +18,7 @@ export default function SocialProofSection() {
         />
         <div className="absolute inset-0 bg-black/80" />
       </div>
+      <FadeIn direction="up">
       <Row className="relative flex flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
@@ -70,6 +74,7 @@ export default function SocialProofSection() {
           ))}
         </div>
       </Row>
+      </FadeIn>
     </Section>
   );
 }
