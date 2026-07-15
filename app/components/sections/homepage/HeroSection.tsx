@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Section from "@/app/components/layout/Section";
 import { FadeIn } from "@/app/components/ui/FadeIn";
+import ParticleCanvas from "@/app/components/sections/homepage/ParticleCanvas";
 
 export default function HeroSection() {
   return (
@@ -20,6 +21,8 @@ export default function HeroSection() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
+        {/* Floating amber bubble lights */}
+        <ParticleCanvas />
       </div>
       <FadeIn direction="up" duration={800} className="relative flex flex-col items-center gap-10 text-center">
         <p className="text-base uppercase tracking-[3.2px] text-amber-accent">
