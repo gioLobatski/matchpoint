@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./tokens.css";
 
 @theme inline {
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
@@ -24,7 +25,50 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee var(--marquee-upper-speed, 30s) linear infinite;
+}
+
+.animate-marquee-fast {
+  animation: marquee var(--marquee-lower-speed, 10s) linear infinite reverse;
+}
+
+/* ─── Marquee upper text styling ─── */
+.marquee-upper-text {
+  font-size: var(--marquee-upper-size);
+  letter-spacing: var(--marquee-upper-tracking);
+  line-height: 1;
+  color: var(--marquee-upper-color);
+  text-shadow: var(--marquee-upper-shadow);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ─── Marquee lower text styling ─── */
+.marquee-lower-text {
+  font-size: var(--marquee-lower-size);
+  color: var(--marquee-lower-color);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ─── Marquee pixelated text fill ─── */
+.bg-marquee-text {
+  background-image: url("/images/marquee.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Hero background styling ─── */
+.hero-bg-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(226, 160, 55, 0.15) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(226, 160, 55, 0.08) 100%
+  );
 }
 
 /* ─── Court Intro 3D rotation ─── */

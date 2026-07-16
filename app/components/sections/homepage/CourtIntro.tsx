@@ -211,6 +211,16 @@ export default function CourtIntro() {
         <CourtCard />
         <CourtCard reverse />
       </div>
+
+      {/* Bottom scroll prompt */}
+      <div className="absolute inset-x-0 bottom-10 flex flex-col items-center gap-2 pointer-events-none">
+        <p className="text-sm font-bold uppercase tracking-[4px] text-white/60">
+          MatchPoint Sports
+        </p>
+        <p className="text-xs font-medium uppercase tracking-[3px] text-white/40 animate-pulse">
+          Scroll to Enter
+        </p>
+      </div>
     </div>
   );
 }

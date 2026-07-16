@@ -106,5 +106,87 @@ export const TESTIMONIAL_STATS = [
   { value: "85", label: "Partner Leagues" },
 ] as const;
 
+// ─── Organizers Pain Points ──────────────────────────────────────────────────
+export const ORGANIZERS_PAIN_POINTS = [
+  {
+    icon: "/icons/calendar-x.svg",
+    title: "Hard to Find Reliable Referees",
+    body: "Every game is a scramble. Finding qualified officials on short notice through personal networks is unpredictable and stressful.",
+  },
+  {
+    icon: "/icons/wallet-outline.svg",
+    title: "Payment Chaos",
+    body: "Manual cash payments, informal agreements, and zero records. Tracking what you owe and who got paid is a full-time job.",
+  },
+  {
+    icon: "/icons/chat-outline.svg",
+    title: "No Way to Vet Credentials",
+    body: "You have no way to verify certifications before booking. Trusting the wrong official puts your event — and your reputation — at risk.",
+  },
+  {
+    icon: "/icons/people.svg",
+    title: "Last-Minute Cancellations",
+    body: "Officials cancel with no notice and no backup plan. Your event suffers, your league loses credibility, and you absorb the cost.",
+  },
+] as const;
+
+// ─── Organizers Features ────────────────────────────────────────────────────
+export const ORGANIZERS_FEATURES = [
+  {
+    icon: "/icons/people.svg",
+    title: "Official Directory",
+    body: "Browse a verified pool of certified basketball officials filtered by location, level, and availability.",
+  },
+  {
+    icon: "/icons/wallet-outline.svg",
+    title: "Seamless Payments",
+    body: "Process official payments through the platform with complete records — no cash handling, no informal agreements.",
+  },
+  {
+    icon: "/icons/search.svg",
+    title: "Smart Matching",
+    body: "Post your game requirements and get matched with available, qualified officials — no more cold calls.",
+  },
+  {
+    icon: "/icons/trending-up.svg",
+    title: "Rating & Reviews",
+    body: "Rate officials after every game and build a trusted network of reliable referees you can count on.",
+  },
+  {
+    icon: "/icons/calendar-x.svg",
+    title: "Verified Credentials",
+    body: "Every official on MatchPoint has verified certifications and a tracked record of games they have officiated.",
+  },
+  {
+    icon: "/icons/inbox.svg",
+    title: "Game Dashboard",
+    body: "Manage all your upcoming games, referee assignments, and payment records from one central dashboard.",
+  },
+] as const;
+
+// ─── Organizers How It Works ────────────────────────────────────────────────
+export const ORGANIZERS_HOW_IT_WORKS_STEPS = [
+  {
+    icon: "/icons/calendar-x.svg",
+    number: "01",
+    text: "Post your game with date, location, sport, and referee requirements",
+  },
+  {
+    icon: "/icons/people.svg",
+    number: "02",
+    text: "Browse verified officials, review ratings and certification history",
+  },
+  {
+    icon: "/icons/search.svg",
+    number: "03",
+    text: "Assign and confirm your referee lineup in one place",
+  },
+  {
+    icon: "/icons/trending-up.svg",
+    number: "04",
+    text: "Track game fees, process payments, and rate officials after every game",
+  },
+] as const;
+
 // ─── Marquee ─────────────────────────────────────────────────────────────────
 export const MARQUEE_ITEM_COUNT = 8;

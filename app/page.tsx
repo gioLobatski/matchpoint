@@ -17,13 +17,15 @@ export default function Home() {
       {/* 3D rotating court — fixed overlay, fades on scroll */}
       <CourtIntro />
 
+      {/* Header sits above CourtIntro stacking context */}
+      <Header />
+
       {/* Main content sits below court z-index */}
       <div className="relative" style={{ zIndex: 10 }}>
-        <Header />
         <HeroSection />
       <MarqueeSection />
       <PainPointsSection />
-      <MissionBannerSection />
+      <MissionBannerSection bgVideo="/referee-action.mp4" />
       <FeaturesSection />
       <HowItWorksSection />
       <WhyWeBuiltSection />

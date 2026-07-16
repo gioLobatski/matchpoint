@@ -141,6 +141,16 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
 
+  /* ===================== MARQUEE ===================== */
+  --marquee-upper-color: rgb(217, 119, 6);
+  --marquee-upper-shadow: rgba(255, 255, 255, 0.15) 1px 1px 0px, rgba(0, 0, 0, 0.2) -1px -1px 0px;
+  --marquee-upper-size: 200px;
+  --marquee-upper-tracking: -0.03em;
+  --marquee-lower-color: rgba(0, 0, 0, 0.55);
+  --marquee-lower-size: 14px;
+  --marquee-upper-speed: 30s;
+  --marquee-lower-speed: 10s;
+
   /* ===================== OVERLAYS ===================== */
   --overlay-light: rgba(0, 0, 0, 0.3);
   --overlay-heavy: rgba(0, 0, 0, 0.8);

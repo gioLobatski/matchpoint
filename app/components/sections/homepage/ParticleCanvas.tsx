@@ -124,7 +124,7 @@ export default function ParticleCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full pointer-events-auto"
+      className="absolute inset-0 w-full pointer-events-none"
       style={{ zIndex: 1, height: "100vh" }}
     />
   );

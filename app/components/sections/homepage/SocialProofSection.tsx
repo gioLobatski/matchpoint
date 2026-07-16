@@ -6,7 +6,31 @@ import Row from "@/app/components/layout/Row";
 import { FadeIn } from "@/app/components/ui/FadeIn";
 import { TESTIMONIAL_STATS } from "@/app/lib/constants";
 
-export default function SocialProofSection() {
+interface SocialProofSectionProps {
+  heading?: string;
+  subheading?: string;
+  testimonial?: string;
+  authorName?: string;
+  authorTitle?: string;
+}
+
+const DEFAULTS = {
+  heading: "Join 500+ Officials Already on MatchPoint",
+  subheading:
+    "Referees across the Philippines are growing their careers, booking more games, and getting paid on time — all through MatchPoint.",
+  testimonial:
+    "MatchPoint changed how I approach officiating. I went from 2 games a month to being fully booked every weekend. The payment tracking alone saved me hours of chasing organizers.",
+  authorName: "Rodel Santos",
+  authorTitle: "PBA-Certified Referee, Metro Manila",
+};
+
+export default function SocialProofSection({
+  heading = DEFAULTS.heading,
+  subheading = DEFAULTS.subheading,
+  testimonial = DEFAULTS.testimonial,
+  authorName = DEFAULTS.authorName,
+  authorTitle = DEFAULTS.authorTitle,
+}: SocialProofSectionProps) {
   return (
     <Section className="relative overflow-hidden py-20">
       <div className="absolute inset-0">
@@ -22,11 +46,10 @@ export default function SocialProofSection() {
       <Row className="relative flex flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-            Join 500+ Officials Already on MatchPoint
+            {heading}
           </h2>
           <p className="max-w-[710px] text-xl leading-9 text-white/80 md:text-2xl">
-            Referees across the Philippines are growing their careers, booking
-            more games, and getting paid on time — all through MatchPoint.
+            {subheading}
           </p>
         </div>
         <figure className="relative flex max-w-[695px] flex-col gap-10 rounded-3xl border border-primary-500 bg-gradient-to-b from-black to-primary-900 p-12">
@@ -38,9 +61,7 @@ export default function SocialProofSection() {
             className="absolute left-5 top-5 opacity-60"
           />
           <blockquote className="max-w-[599px] text-base leading-6 text-white">
-            MatchPoint changed how I approach officiating. I went from 2 games
-            a month to being fully booked every weekend. The payment tracking
-            alone saved me hours of chasing organizers.
+            {testimonial}
           </blockquote>
           <figcaption className="flex items-center gap-2">
             <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-white">
@@ -52,9 +73,9 @@ export default function SocialProofSection() {
               />
             </span>
             <span className="text-base leading-6 text-white">
-              Rodel Santos
+              {authorName}
               <br />
-              PBA-Certified Referee, Metro Manila
+              {authorTitle}
             </span>
           </figcaption>
         </figure>
@@ -67,7 +88,7 @@ export default function SocialProofSection() {
               <p className="text-4xl font-semibold leading-[46px] text-primary-500">
                 {stat.value}
               </p>
-              <p className="text-sm leading-6 text-primary-600">
+              <p className="text-sm leading-6 text-white/80">
                 {stat.label}
               </p>
             </div>

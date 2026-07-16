@@ -4,10 +4,10 @@ import { NAVIGATION_ITEMS } from "@/app/lib/constants";
 
 export default function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-[98px] items-center justify-between bg-black/50 px-6 backdrop-blur-[2px] lg:px-16">
+    <header className="fixed inset-x-0 top-0 z-[100] flex h-[98px] items-center justify-between bg-black/50 px-6 backdrop-blur-[2px] lg:px-16">
       <Link href="#home" className="relative h-[66px] w-[129px] shrink-0">
         <Image
-          src="/images/logo.png"
+          src="/images/matchpoint_logo.png"
           alt="MatchPoint"
           fill
           className="object-contain"
@@ -27,7 +27,7 @@ export default function Header() {
       </nav>
       <Link
         href="#apply"
-        className="rounded-xl bg-primary-500 px-6 py-4 text-base text-black transition-colors hover:bg-amber-accent"
+        className="rounded-xl bg-primary-500 px-6 py-4 text-base font-bold text-white transition-colors hover:bg-amber-accent"
       >
         Start Your Journey
       </Link>
