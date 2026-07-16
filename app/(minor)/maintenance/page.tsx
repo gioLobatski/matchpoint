@@ -1,8 +1,5 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import Header from "@/app/components/layout/Header";
-import Footer from "@/app/components/layout/Footer";
-import Section from "@/app/components/layout/Section";
 import Row from "@/app/components/layout/Row";
 
 export const metadata: Metadata = {
@@ -15,45 +12,54 @@ export const metadata: Metadata = {
  * Maintenance Page
  *
  * Displayed during scheduled downtime.
- * Includes Header and Footer.
+ * Full-bleed background image with dark overlay.
+ * Centered layout with logo, heading, body text, and copyright.
  */
 export default function MaintenancePage() {
   return (
-    <>
-      <Section
-        bgColor="bg-black"
-        className="relative flex min-h-[700px] flex-col"
-      >
-        <Header />
-        <Row className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
-          <Image
-            src="/images/matchpoint_logo.png"
-            alt="MatchPoint Logo"
-            width={120}
-            height={120}
-            className="mb-2"
-            priority
-          />
+    <section className="relative flex min-h-screen flex-col">
+      {/* Background image */}
+      <Image
+        src="/images/maintenance_bg.png"
+        alt=""
+        fill
+        className="object-cover"
+        priority
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70" />
 
-          <h1 className="text-3xl font-bold leading-tight text-primary-500 md:text-4xl">
+      {/* Content layer */}
+      <Row className="relative z-10 flex flex-1 flex-col items-center justify-center gap-[30px] px-6 py-20 text-center">
+        {/* Logo */}
+        <Image
+          src="/images/matchpoint_logo.png"
+          alt="MatchPoint"
+          width={120}
+          height={120}
+          priority
+        />
+
+        {/* Text block */}
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-[48px] font-bold leading-none text-white md:text-[60px]">
             Under Maintenance
           </h1>
-
-          <p className="max-w-[480px] text-base leading-6 text-white/80">
-            We&apos;re performing some scheduled maintenance to improve your
-            experience. MatchPoint will be back up shortly — thanks for your
-            patience.
+          <p className="max-w-[700px] text-xl leading-9 text-white md:text-2xl">
+            Exciting things are on the horizon! Stay tuned for our upcoming
+            website.
+            <br />
+            <span className="font-semibold">Launching soon!</span>
           </p>
+        </div>
+      </Row>
 
-          <a
-            href="https://www.matchpoint-official.xyz/"
-            className="mt-4 rounded-xl bg-primary-500 px-8 py-4 text-base font-semibold text-black transition-colors hover:bg-amber-accent"
-          >
-            Return to Homepage
-          </a>
-        </Row>
-      </Section>
-      <Footer />
-    </>
+      {/* Copyright */}
+      <div className="relative z-10 pb-8 text-center">
+        <p className="text-sm text-white/60">
+          Copyright 2026. MatchPoint. All Rights Reserved
+        </p>
+      </div>
+    </section>
   );
 }

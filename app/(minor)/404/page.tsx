@@ -1,14 +1,21 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Row from "@/app/components/layout/Row";
 
+export const metadata: Metadata = {
+  title: "404 — MatchPoint",
+  description: "The page you are looking for doesn't exist or has been moved.",
+};
+
 /**
- * Global 404 Handler
+ * 404 Page
  *
- * Catches all unmatched routes in the Next.js App Router.
+ * Direct /404 route inside the (minor) route group.
+ * The global catch-all 404 handler remains at app/not-found.tsx.
  * Two-column layout: text left, large "404" right.
  * Full-bleed referee background with dark overlay.
  */
-export default function NotFound() {
+export default function FourOhFourPage() {
   return (
     <section className="relative flex min-h-screen flex-col">
       {/* Background image */}
