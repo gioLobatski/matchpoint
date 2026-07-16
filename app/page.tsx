@@ -10,6 +10,7 @@ import HowItWorksSection from "@/app/components/sections/homepage/HowItWorksSect
 import WhyWeBuiltSection from "@/app/components/sections/homepage/WhyWeBuiltSection";
 import SocialProofSection from "@/app/components/sections/homepage/SocialProofSection";
 import ApplyFormSection from "@/app/components/sections/homepage/ApplyFormSection";
+import OrganizerCTASection from "@/app/components/sections/homepage/OrganizerCTASection";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <WhyWeBuiltSection />
       <SocialProofSection />
       <ApplyFormSection />
+      <OrganizerCTASection />
         <Footer />
       </div>
     </main>

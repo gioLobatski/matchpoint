@@ -14,15 +14,7 @@ export default function OrganizersApplyFormSection() {
 
   return (
     <Section id="apply" className="relative overflow-hidden py-20">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/stadium-bg.png"
-          alt=""
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/80" />
-      </div>
+
       <FadeIn direction="up">
         <Row className="relative grid items-start gap-12 lg:grid-cols-2">
           <div className="flex flex-col gap-6">

@@ -171,11 +171,19 @@ export default function CourtIntro() {
     if (!el) return;
     const trigger = ScrollTrigger.create({
       trigger: document.body,
-      start: "top top",
-      end: "100vh top",
+      start: "300vh top",
+      end: "500vh top",
       onUpdate: (self) => {
-        const opacity = Math.max(0, 1 - self.progress);
-        el.style.opacity = String(opacity);
+        const holdUntil = 0.5; // stay fully visible for first 50% of scroll
+        let opacity: number;
+        if (self.progress < holdUntil) {
+          opacity = 1;
+        } else {
+          // ease-out fade over remaining 50%
+          const p = (self.progress - holdUntil) / (1 - holdUntil);
+          opacity = 1 - Math.pow(p, 3);
+        }
+        el.style.opacity = String(Math.max(0, opacity));
         el.style.pointerEvents = opacity > 0.1 ? "auto" : "none";
       },
     });

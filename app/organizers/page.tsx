@@ -11,6 +11,7 @@ import OrganizersHowItWorksSection from "@/app/components/sections/organizers/Ho
 import WhyWeBuiltSection from "@/app/components/sections/homepage/WhyWeBuiltSection";
 import SocialProofSection from "@/app/components/sections/homepage/SocialProofSection";
 import OrganizersApplyFormSection from "@/app/components/sections/organizers/ApplyFormSection";
+import OfficialsCTASection from "@/app/components/sections/organizers/OfficialsCTASection";
 
 export const metadata: Metadata = {
   title: "MatchPoint — Every Game Deserves the Right Official",
@@ -56,6 +57,7 @@ export default function OrganizersPage() {
           authorTitle="League Coordinator, Quezon City"
         />
         <OrganizersApplyFormSection />
+        <OfficialsCTASection />
         <Footer />
       </div>
     </main>

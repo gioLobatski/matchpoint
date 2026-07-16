@@ -34,10 +34,11 @@ export default function HeroSection({
   bgImage = DEFAULTS.bgImage,
 }: HeroSectionProps) {
   return (
-    <Section
-      id="home"
-      className="relative flex min-h-[800px] flex-col items-center justify-center overflow-hidden px-6 pt-[98px]"
-    >
+    <div className="relative" style={{ minHeight: "calc(800px + 250px)" }}>
+      <Section
+        id="home"
+        className="sticky top-0 z-10 flex min-h-[800px] flex-col items-center justify-center overflow-hidden px-6 pt-[98px]"
+      >
       <div className="absolute inset-0">
         <Image
           src={bgImage}
@@ -47,8 +48,8 @@ export default function HeroSection({
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
-        {/* Bottom gradient — blends hero into marquee background */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-500/60 to-transparent" />
+        {/* Bottom gradient — blends hero into black spacer */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
         {/* Floating amber bubble lights */}
         <ParticleCanvas />
       </div>
@@ -71,6 +72,9 @@ export default function HeroSection({
           {ctaText}
         </Link>
       </FadeIn>
-    </Section>
+      </Section>
+      <div className="h-[150px] w-full bg-black" />
+      <div className="h-[100px] w-full bg-gradient-to-b from-black to-[#100c08]" />
+    </div>
   );
 }

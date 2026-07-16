@@ -31,18 +31,20 @@ export default function Footer() {
       <Row className="flex flex-col items-center gap-10">
         <div className="h-px w-full bg-primary-500/40" />
         <div className="flex w-full flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="relative h-[79px] w-[180px]">
-            <Image
-              src="/images/matchpoint_logo.png"
-              alt="MatchPoint"
-              fill
-              className="object-contain"
-            />
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
+            <div className="relative h-[79px] w-[180px]">
+              <Image
+                src="/images/matchpoint_logo.png"
+                alt="MatchPoint"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <p className="text-sm text-white/60">
+              &copy; {new Date().getFullYear()} MatchPoint Sports. All rights
+              reserved.
+            </p>
           </div>
-          <p className="text-sm text-white/60">
-            &copy; {new Date().getFullYear()} MatchPoint Sports. All rights
-            reserved.
-          </p>
           <div className="flex items-center gap-5">
             {SOCIAL_ICONS.map((icon) => (
               <a

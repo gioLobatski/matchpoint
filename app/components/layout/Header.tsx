@@ -14,23 +14,25 @@ export default function Header() {
           priority
         />
       </Link>
-      <nav className="hidden items-center gap-7 text-base text-white/80 md:flex">
-        {NAVIGATION_ITEMS.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            className="transition-colors hover:text-primary-500"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
-      <Link
-        href="#apply"
-        className="rounded-xl bg-primary-500 px-6 py-4 text-base font-bold text-white transition-colors hover:bg-amber-accent"
-      >
-        Start Your Journey
-      </Link>
+      <div className="flex items-center gap-7">
+        <nav className="hidden items-center gap-7 text-base text-white/80 md:flex">
+          {NAVIGATION_ITEMS.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="transition-colors hover:text-primary-500"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+        <Link
+          href="#apply"
+          className="rounded-xl bg-primary-500 px-6 py-4 text-base font-bold text-white transition-colors hover:bg-amber-accent"
+        >
+          Start Your Journey
+        </Link>
+      </div>
     </header>
   );
 }

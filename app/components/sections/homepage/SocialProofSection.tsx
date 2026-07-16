@@ -35,12 +35,11 @@ export default function SocialProofSection({
     <Section className="relative overflow-hidden py-20">
       <div className="absolute inset-0">
         <Image
-          src="/images/stadium-bg.png"
+          src="/images/Stadium Background.png"
           alt=""
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/80" />
       </div>
       <FadeIn direction="up">
       <Row className="relative flex flex-col items-center gap-10">
